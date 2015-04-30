@@ -1,6 +1,7 @@
 /*
 project-e
 by exoluse 
+++ eclipse Git
 */
 ////////////////////////////////// start
 var projectE = (function() { return {
