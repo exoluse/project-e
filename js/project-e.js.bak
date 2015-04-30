@@ -75,7 +75,7 @@ selectCheckboxIntRange: function(name, val1, val2){
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value >= val1 && selectedObj[i].value <= val2){
+		if(selectedObj[i].value > val1 && selectedObj[i].value < val2){
 			selectedObj[i].checked = true;
 		}
 	}
