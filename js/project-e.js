@@ -3,16 +3,34 @@ project-e
 by exoluse 
 */
 ////////////////////////////////// start
-var projectE = (function() { return {
+var PE = (function() { return {
 ////////////////////////////////// start
+
+/*
+domSel
+*/
+domSel: function(type, name){
+	
+	var selectedObj;
+
+	if(type=="#"){
+		selectedObj = document.getElementById(name);
+	}
+
+	if(type=="$"){
+		selectedObj = document.getElementsByName(name);
+	}
+	return selectedObj;
+},
+
 
 
 /*
-selectCheckboxAll
+chkCboxAllByName
 */
-selectCheckboxAll: function(name){
+chkCboxAllByName: function(name){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 
 	for(var i=0;i<selectedObj.length;i++){
 		selectedObj[i].checked = true;
@@ -21,11 +39,11 @@ selectCheckboxAll: function(name){
 
 
 /*
-selectCheckboxByValue
+chkCboxByValueByName
 */
-selectCheckboxByValue: function(name, val){
+chkCboxByValueByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
@@ -36,11 +54,11 @@ selectCheckboxByValue: function(name, val){
 },
 
 /*
-selectCheckboxIntMore
+chkCboxIntMoreByName
 */
-selectCheckboxIntMore: function(name, val){
+chkCboxIntMoreByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
@@ -51,11 +69,11 @@ selectCheckboxIntMore: function(name, val){
 },
 
 /*
-selectCheckboxIntLess
+chkCboxIntLessByName
 */
-selectCheckboxIntLess: function(name, val){
+chkCboxIntLessByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
@@ -67,11 +85,11 @@ selectCheckboxIntLess: function(name, val){
 
 
 /*
-selectCheckboxIntRange
+chkCboxIntRangeByName
 */
-selectCheckboxIntRange: function(name, val1, val2){
+chkCboxIntRangeByName: function(name, val1, val2){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
@@ -83,11 +101,11 @@ selectCheckboxIntRange: function(name, val1, val2){
 
 
 /*
-selectCheckboxStrStartAt
+chkCboxStrStartAtByName
 */
-selectCheckboxStrStartAt: function(name, val){
+chkCboxStrStartAtByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
 	
 	for(var i=0;i<selectedObj.length;i++){
@@ -100,11 +118,11 @@ selectCheckboxStrStartAt: function(name, val){
 
 
 /*
-selectCheckboxStrEndTo
+chkCboxStrEndToByName
 */
-selectCheckboxStrEndTo: function(name, val){
+chkCboxStrEndToByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
 	
 	
@@ -118,11 +136,11 @@ selectCheckboxStrEndTo: function(name, val){
 
 
 /*
-selectCheckboxStrLike
+chkCboxStrLikeByName
 */
-selectCheckboxStrLike: function(name, val){
+chkCboxStrLikeByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
 
 	for(var i=0;i<selectedObj.length;i++){
