@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 project-e
 by exoluse 
@@ -231,5 +230,4 @@ selectCheckboxIntRange: function(name, val1, val2){
 
 //////////////// end
 }; })();
->>>>>>> origin/master
 /////////////// end
