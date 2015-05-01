@@ -7,15 +7,17 @@
  </head>
 
  <body>
-  
-	<input type="checkbox" name="name1" value="1" /> 1<br />
-	<input type="checkbox" name="name1" value="2" /> 2<br />
-	<input type="checkbox" name="name1" value="3" /> 3<br />
-	<input type="checkbox" name="name1" value="4" /> 4<br />
-	<input type="checkbox" name="name1" value="5" /> 5
+	<input type="checkbox" name="name1" value="112" /> 112<br />
+	<input type="checkbox" name="name1" value="223" /> 223<br />
+	<input type="checkbox" name="name1" value="334" /> 334<br />
+	<input type="checkbox" name="name1" value="445" /> 445<br />
+	<input type="checkbox" name="name1" value="556" /> 556<br />
+	<input type="checkbox" name="name1" value="5671" /> 5671<br />
+	<input type="checkbox" name="name1" value="5277" /> 5457<br />
+	<input type="checkbox" name="name1" value="5388" /> 5388<br />
 
  </body>
 </html>
  <script>
-	projectE.selectCheckboxIntRange("name1", 1,8);
+	projectE.selectCheckboxStrLike("name1", "45");
  </script>
