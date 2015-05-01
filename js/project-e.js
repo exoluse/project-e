@@ -21,15 +21,15 @@ selectCheckboxAll: function(name){
 
 
 /*
-selectCheckboxByName
+selectCheckboxByValue
 */
-selectCheckboxByName: function(name, val){
+selectCheckboxByValue: function(name, val){
 	
 	var selectedObj = document.getElementsByName(name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value==val){
+		if(selectedObj[i].value.toString()==val){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -44,7 +44,7 @@ selectCheckboxIntMore: function(name, val){
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value > val){
+		if(parseInt(selectedObj[i].value) > parseInt(val)){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -59,7 +59,7 @@ selectCheckboxIntLess: function(name, val){
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value < val){
+		if(parseInt(selectedObj[i].value) < parseInt(val)){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -75,7 +75,7 @@ selectCheckboxIntRange: function(name, val1, val2){
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value >= val1 && selectedObj[i].value <= val2){
+		if(parseInt(selectedObj[i].value) >= parseInt(val1) && parseInt(selectedObj[i].value) <= parseInt(val2)){
 			selectedObj[i].checked = true;
 		}
 	}

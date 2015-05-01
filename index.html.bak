@@ -28,9 +28,6 @@
 	수치비교 검색
 	<input type="button" value="값이 556보다 작은것은?" onclick="projectE.selectCheckboxIntLess('name1', '556')" />
 	<input type="button" value="값이 556보다 큰것은?" onclick="projectE.selectCheckboxIntMore('name1', '556')" />
-	<input type="button" value="값이 300보다 크고 5000보다 작은것은?" onclick="projectE.selectCheckboxIntRange('name1', '300', '5000')" />
-
-
 
 <br />
 <input type="button" value="리셋!!" onclick="this.form.reset();" />
