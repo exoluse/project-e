@@ -3,16 +3,34 @@ project-e
 by exoluse 
 */
 ////////////////////////////////// start
-var projectE = (function() { return {
+var PE = (function() { return {
 ////////////////////////////////// start
+
+/*
+dom select
+*/
+domSel: function(type, name){
+	
+	var selectedObj;
+
+	if(type=="#"){
+		selectedObj = document.getElementById(name);
+	}
+
+	if(type=="$"){
+		selectedObj = document.getElementsByName(name);
+	}
+	return selectedObj;
+},
+
 
 
 /*
 selectCheckboxAll
 */
-selectCheckboxAll: function(name){
+chkCboxAllByName: function(name){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 
 	for(var i=0;i<selectedObj.length;i++){
 		selectedObj[i].checked = true;
@@ -21,15 +39,15 @@ selectCheckboxAll: function(name){
 
 
 /*
-selectCheckboxByName
+selectCheckboxByValue
 */
-selectCheckboxByName: function(name, val){
+chkCboxByValueByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value==val){
+		if(selectedObj[i].value.toString()==val){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -38,13 +56,13 @@ selectCheckboxByName: function(name, val){
 /*
 selectCheckboxIntMore
 */
-selectCheckboxIntMore: function(name, val){
+chkCboxIntMoreByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value > val){
+		if(parseInt(selectedObj[i].value) > parseInt(val)){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -53,13 +71,13 @@ selectCheckboxIntMore: function(name, val){
 /*
 selectCheckboxIntLess
 */
-selectCheckboxIntLess: function(name, val){
+chkCboxIntLessByName: function(name, val){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value < val){
+		if(parseInt(selectedObj[i].value) < parseInt(val)){
 			selectedObj[i].checked = true;
 		}
 	}
@@ -69,14 +87,69 @@ selectCheckboxIntLess: function(name, val){
 /*
 selectCheckboxIntRange
 */
-selectCheckboxIntRange: function(name, val1, val2){
+chkCboxIntRangeByName: function(name, val1, val2){
 	
-	var selectedObj = document.getElementsByName(name);
+	var selectedObj = PE.domSel("$", name);
 	
 	for(var i=0;i<selectedObj.length;i++){
 
-		if(selectedObj[i].value > val1 && selectedObj[i].value < val2){
+		if(parseInt(selectedObj[i].value) >= parseInt(val1) && parseInt(selectedObj[i].value) <= parseInt(val2)){
 			selectedObj[i].checked = true;
+		}
+	}
+},
+
+
+/*
+selectCheckboxStrStartAt
+*/
+chkCboxStrStartAtByName: function(name, val){
+	
+	var selectedObj = PE.domSel("$", name);
+	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
+	
+	for(var i=0;i<selectedObj.length;i++){
+
+		if(selectedObj[i].value.substring(0, valLength)==val){
+			selectedObj[i].checked = true;
+		}
+	}
+},
+
+
+/*
+selectCheckboxStrEndTo
+*/
+chkCboxStrEndToByName: function(name, val){
+	
+	var selectedObj = PE.domSel("$", name);
+	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
+	
+	
+	for(var i=0;i<selectedObj.length;i++){
+
+		if(selectedObj[i].value.substring(selectedObj[i].value.length-valLength, selectedObj[i].value.length)==val){
+			selectedObj[i].checked = true;
+		}
+	}
+},
+
+
+/*
+selectCheckboxStrLike
+*/
+chkCboxStrLikeByName: function(name, val){
+	
+	var selectedObj = PE.domSel("$", name);
+	var valLength = val.toString().length; // 스트링으로 파싱해줘야 한다.
+
+	for(var i=0;i<selectedObj.length;i++){
+
+		for(var j=0;j<selectedObj[i].value.toString().length-1;j++){
+
+			if(selectedObj[i].value.substring(j, valLength+j)==val){
+				selectedObj[i].checked = true;
+			}
 		}
 	}
 }
@@ -84,4 +157,4 @@ selectCheckboxIntRange: function(name, val1, val2){
 
 //////////////// end
 }; })();
-/////////////// end
+//////////////// end
