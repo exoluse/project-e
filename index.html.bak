@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> New Document </title>
+
+ <script type="text/javascript" src="./js/project-e.js"></script>
+ </head>
+
+ <body>
+  
+	<input type="checkbox" name="name1" value="1" /> 1<br />
+	<input type="checkbox" name="name1" value="2" /> 2<br />
+	<input type="checkbox" name="name1" value="3" /> 3<br />
+	<input type="checkbox" name="name1" value="4" /> 4<br />
+	<input type="checkbox" name="name1" value="5" /> 5
+
+ </body>
+</html>
+ <script>
+	projectE.selectCheckboxIntRange("name1", 1,8);
+ </script>
